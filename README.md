@@ -101,4 +101,57 @@ lib/bs
 # Result
 Result is this repo.
 
+# Vim setup
+
+1. Install reasonml-language-server and add the binary to the $PATH
+
+2. `.vimrc` plugins:
+
+```
+# linting, formatting
+Plugin 'w0rp/ale'
+
+# autocompletion, does linting
+Plugin 'neoclide/coc.nvim'
+
+# syntax highliting
+Plugin 'reasonml-editor/vim-reason-plus'
+```
+
+3. `.vimrc` config:
+
+```
+let g:ale\_linters = {
+\   'reason': ['reason-language-server'],
+\}
+
+let g:ale\_fixers = {
+\   'reason': ['refmt'],
+\}
+
+let g:ale\_reason\_ls\_executable = '~/your-path-to/reason-language-server'
+```
+
+4. configuration of CoC
+- `:CocConfig`
+- Add following:
+
+```json
+{
+	"languageserver": {
+    "reason": {
+      "command": "reason-language-server",
+      "filetypes": ["reason"]
+    }
+  },
+	// following is nice to have:
+	"coc.preferences.previewAutoClose": false,
+	"suggest.echodocSupport": true,
+	"signature.target": "float",
+	"suggest.detailField": "preview",
+	"suggest.enablePreview": true
+}
+```
+
+
 
