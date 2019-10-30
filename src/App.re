@@ -90,7 +90,7 @@ let app = () =>
         <View style={styles##body}>
           <View style={styles##sectionContainer}>
             <Text style={styles##sectionTitle}>
-              "Step Step One"->React.string
+              "Step One"->React.string
             </Text>
             <Text style={styles##sectionDescription}>
               "Edit "->React.string
